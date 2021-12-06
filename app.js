@@ -1,8 +1,17 @@
-// module pattern basic structure
-(function(){
-	// declare private variables and functions
+// standard module pattern
+// it will be UI Controller
+const UIController = (function(){
+	let text = 'Hello World'
 
-	return{
-		// declare public variables and functions
+	const changeText=function(){
+		const element = document.querySelector('h1')
+		element.textContent = text
+	}
+	return {
+		callChangeText: function(){
+			changeText()
+			console.log(text)
+		}
 	}
 })();
+UIController.callChangeText()
